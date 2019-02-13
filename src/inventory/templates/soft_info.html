@@ -1,0 +1,61 @@
+<!-- /.col-lg-4 -->
+	<div class="center">
+		<div class="col-lg-12">
+		    <div class="panel panel-default center">
+		        <div class="panel-heading">
+		           <h3>Информация о ПО</h3>
+		        </div>
+		        <div class="panel-body">
+		            <!-- body -->
+		            <div class="form-group">
+		            	<div align="right">
+				           <button id="removeSoftware" type="button" class="btn btn-danger">
+		                        <span class="glyphicon glyphicon-remove"></span> Удалить
+		                   </button>
+	                   </div>
+	                    <label>Наименование ПО</label>
+	                    <input class="form-control" id="name" value="<%= name %>">
+	                </div>
+	                <div class="form-group">
+	                    <label>Серийный номер</label>
+	                    <input class="form-control" id="serial" value="<%= serial %>">
+	                </div>
+	          		<div class="form-group">
+	                    <label>Класс ПО:</label>
+	                    <select class="form-control" id="class_id">
+	                    <%  _.each( classes , function (elem) 
+	                  			{ %> 
+	                  				<option value="<%= elem.id %>" 
+	                  				<% if( class_id == elem.id ) { %> selected <% }%> >
+	                  				  <%= elem.name %>
+	                  				</option>
+	                  		<% }); %>
+	                    </select>
+	                </div>
+	                <div class="form-group">
+	                    <label>Номер лицензии:</label>
+	                    <select class="form-control" id="license_id">
+	                    <%  _.each( licenses , function (elem) 
+	                  			{ %> 
+	                  				<option value="<%= elem.id %>" 
+	                  				<% if( elem.id == license_id ) { %> selected <% }%> >
+	                  				  <%= elem.lic_num %> <%= elem.product_name %>
+	                  				</option>
+	                  		<% }); %>
+	                    </select>
+	                </div>
+	            
+	                <!-- /body -->
+		        </div>
+		        <div class="panel-footer">
+		        	
+		        </div>
+		    </div>
+		</div>
+	</div>
+	<style>
+	#chooseLicense:hover {
+		cursor: pointer;
+	};
+	</style>
+ 

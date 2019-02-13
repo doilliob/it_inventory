@@ -1,0 +1,115 @@
+<div class="center">
+	<div class="col-lg-12">
+	    <div class="panel panel-default center">
+	        <div class="panel-heading">
+	           <h3>Информация о лицензии</h3>
+	        </div>
+	        <div class="panel-body">
+	            <!-- body -->
+	            
+                <div class="form-group">
+                    <label>Учреждение</label>
+                    <select class="form-control hwinfo" id="organization">
+                      <% _.each(organizations, function(elem){
+                    	%> <option value="<%= elem %>" 
+                    	 		<% if( elem == organization ) { %> selected <% } %>
+                    	   ><%= elem %></option>
+                    <%
+                    	}); 
+                    %>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+				    <label>Номер лицензии</label>
+				    <input class="form-control  hwinfo" id="lic_num" value="<%= lic_num %>">
+				    <p class="help-block">0123456789</p>
+				</div>
+                
+                <div class="form-group">
+                    <label>Наименование лицензии</label>
+                    <input class="form-control  hwinfo" id="lic_name" value="<%= lic_name %>">
+                    <p class="help-block">OPEN 22115546688446ZZ</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Категория</label>
+                    <select class="form-control hwinfo" id="class_id">
+                    <% _.each(classes, function(elem){
+                    	%> <option value="<%= elem.id %>" 
+                    	 		<% if( elem.id == class_id ) { %> selected <% } %>
+                    	   ><%= elem.name %></option>
+                    <%
+                    	}); 
+                    %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Категория (Microsoft)</label>
+                    <input class="form-control  hwinfo" id="microsoft_category" value="<%= microsoft_category %>">
+                    <p class="help-block"></p>
+                </div>
+                <div class="form-group">
+                    <label>Семейство (Microsoft)</label>
+                    <input class="form-control  hwinfo" id="microsoft_family" value="<%= microsoft_family %>">
+                    <p class="help-block"></p>
+                </div>
+                <div class="form-group">
+                    <label>Версия (Microsoft)</label>
+                    <input class="form-control  hwinfo" id="microsoft_version" value="<%= microsoft_version %>">
+                    <p class="help-block"></p>
+                </div>
+                <div class="form-group">
+                    <label>Тип (Microsoft)</label>
+                    <input class="form-control  hwinfo" id="microsoft_type" value="<%= microsoft_type %>">
+                    <p class="help-block"></p>
+                </div>
+                <div class="form-group">
+                    <label>Фактическое количество (Microsoft)</label>
+                    <input class="form-control  hwinfo" id="microsoft_fact" value="<%= microsoft_fact %>">
+                    <p class="help-block"></p>
+                </div>
+	            <div class="form-group">
+				    <label>Неполные лицензии (Microsoft)</label>
+				    <input class="form-control hwinfo" id="microsoft_notfull" value="<%= microsoft_notfull %>">
+				    <p class="help-block"></p>
+				</div>
+                 <div class="form-group">
+                    <label>Начало действия лицензии</label>
+                    <input class="form-control hwinfo datepicker1" id="lic_start_date" value="<%= lic_start_date %>" data-date-format="yyyy-mm-dd">
+                    <p class="help-block"></p>
+                </div>
+                 <div class="form-group">
+                    <label>Окончание действия лицензии</label>
+                    <input class="form-control hwinfo datepicker2" id="lic_stop_date" value="<%= lic_stop_date %>" data-date-format="yyyy-mm-dd">
+                    <p class="help-block"></p>
+                </div>
+				<div class="form-group">
+				    <label>Наименование продукта</label>
+				    <input class="form-control hwinfo" id="product_name" value="<%= product_name %>">
+				    <p class="help-block"></p>
+				</div>
+                <div class="form-group">
+                    <label>Количество лицензий:</label>
+                    <input class="form-control hwinfo" id="lic_count" value="<%= lic_count %>">
+                    <p class="help-block"></p>
+                </div>
+
+                <div align="right">
+                    <button class="btn btn-success" id="SaveInfo">Сохранить изменения</button>
+                </div>
+	            <!-- /body -->
+	        </div>
+
+	    </div>
+	</div>
+</div>
+<!--  Turn on datepicker -->
+<script>
+$('.datepicker1').datepicker({
+        language: 'ru'
+});
+$('.datepicker2').datepicker({
+        language: 'ru'
+});
+</script>
